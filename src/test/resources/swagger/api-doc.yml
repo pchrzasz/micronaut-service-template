@@ -1,0 +1,16 @@
+openapi: 3.0.1
+info:
+  title: microservice-template
+  version: "0.0"
+paths:
+  /hello:
+    get:
+      operationId: hello
+      parameters: []
+      responses:
+        default:
+          description: hello default response
+          content:
+            application/json:
+              schema:
+                type: string

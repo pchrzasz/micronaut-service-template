@@ -8,13 +8,18 @@ micronaut:
         descriptions: true
         step: PT1M
     enabled: true
+  router:
+    static-resources:
+      swagger:
+        paths: classpath:META-INF/swagger
+        mapping: /swagger/**
 tracing:
   jaeger:
     enabled: true
     sampler:
       probability: 0.1
-eureka:
-  client:
-    registration:
-      enabled: true
-    defaultZone: ${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}
+#eureka:
+#  client:
+#    registration:
+#      enabled: true
+#    defaultZone: ${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}
