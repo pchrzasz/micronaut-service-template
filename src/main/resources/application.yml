@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: microserviceTemplate
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+        descriptions: true
+        step: PT1M
+    enabled: true
+tracing:
+  jaeger:
+    enabled: true
+    sampler:
+      probability: 0.1
+eureka:
+  client:
+    registration:
+      enabled: true
+    defaultZone: ${EUREKA_HOST:localhost}:${EUREKA_PORT:8761}
