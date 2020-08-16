@@ -13,6 +13,14 @@ micronaut:
       swagger:
         paths: classpath:META-INF/swagger
         mapping: /swagger/**
+endpoints:
+  all:
+    path: /management
+    sensitive: false
+  health:
+    details-visible: ANONYMOUS
+    discovery-client:
+      enabled: true
 tracing:
   jaeger:
     enabled: true

@@ -13,8 +13,7 @@ repositories {
 }
 
 configurations {
-    // for dependencies that are needed for development only
-    developmentOnly
+    providedRuntime
 }
 
 dependencies {
@@ -30,13 +29,19 @@ dependencies {
     implementation("io.micronaut:micronaut-http-server-netty")
     implementation("io.micronaut:micronaut-http-client")
     implementation("io.swagger.core.v3:swagger-annotations")
+
     implementation("io.micronaut:micronaut-management")
+
     implementation("io.micronaut:micronaut-discovery-client")
+
     implementation("io.micronaut.micrometer:micronaut-micrometer-core")
     implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
+
     implementation("io.micronaut:micronaut-tracing")
     runtimeOnly("io.jaegertracing:jaeger-thrift")
+
     implementation("io.micronaut.reactor:micronaut-reactor")
+
     implementation("org.apache.logging.log4j:log4j-core:2.12.1")
     runtimeOnly("org.apache.logging.log4j:log4j-api:2.12.1")
     runtimeOnly("org.apache.logging.log4j:log4j-slf4j-impl:2.12.1")
@@ -49,8 +54,6 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation "org.assertj:assertj-core:3.16.1"
 }
-
-test.classpath += configurations.developmentOnly
 
 mainClassName = "com.pchrzasz.Application"
 
@@ -78,7 +81,6 @@ tasks.withType(JavaCompile) {
 
 
 tasks.withType(JavaExec) {
-    classpath += configurations.developmentOnly
     jvmArgs('-XX:TieredStopAtLevel=1', '-Dcom.sun.management.jmxremote')
     if (gradle.startParameter.continuous) {
         systemProperties(
