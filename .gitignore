@@ -12,3 +12,4 @@ out/
 .settings
 .classpath
 !gradle/wrapper/gradle-wrapper.jar
+logs/
