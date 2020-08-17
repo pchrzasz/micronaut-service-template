@@ -1,0 +1,8 @@
+logger:
+  levels:
+    ROOT: INFO
+    com.pchrzasz: INFO
+
+micronaut:
+  server:
+    port: ${PORT:8080}

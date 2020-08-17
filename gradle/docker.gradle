@@ -1,0 +1,21 @@
+jib {
+    from {
+        image = "adoptopenjdk/openjdk11:alpine-jre"
+    }
+    to {
+        image = "microservice-template:latest"
+    }
+    container {
+        entrypoint = ["java", "-Dcom.sun.management.jmxremote", "-jar", "microservice-template-all.jar"]
+        ports = ["8080"]
+        environment = [
+                MICRONAUT_ENVIRONMENTS: "prod",
+                PORT: "8080"
+        ]
+        creationTime = "USE_CURRENT_TIMESTAMP"
+    }
+    extraDirectories {
+        paths = file("build/libs")
+    }
+}
+

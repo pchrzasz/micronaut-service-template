@@ -1,0 +1,9 @@
+version: '2'
+services:
+  microservice-template:
+    image: microservice-template
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - MICRONAUT_ENVIRONMENTS=prod
+    ports:
+      - 8080:8080

@@ -1,0 +1,8 @@
+logger:
+  levels:
+    ROOT: DEBUG
+    com.pchrzasz: DEBUG
+
+micronaut:
+  server:
+    port: 8080
