@@ -13,6 +13,20 @@ This service:
 - allows for tracing its endpoint (Jaeger end-to-end distributed tracing)
 - logging with highlight scheme (errors highlighted with red color)
 - exposes dummy endpoint `/hello`
+- supports building GraalVM native image
+    - outside docker
+           
+            $ sdk install java 20.1.0.r8-grl
+            $ sdk use java 20.1.0.r8-grl
+            $ gu install native-image
+            $ ./build-native-image.sh
+            $ ./micronaut-template-graalvm
+            
+    - inside docker
+    
+            $ ./gradlew assemble 
+            $ docker build . -t micronaut-template-graalvm
+            $ docker run -p 8080:8080 micronaut-template-graalvm
 
 ## Feature openapi documentation
 

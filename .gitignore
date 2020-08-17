@@ -13,3 +13,4 @@ out/
 .classpath
 !gradle/wrapper/gradle-wrapper.jar
 logs/
+micronaut-template-graalvm

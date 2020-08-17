@@ -52,8 +52,11 @@ dependencies {
     implementation("io.micronaut.micrometer:micronaut-micrometer-core")
     implementation("io.micronaut.micrometer:micronaut-micrometer-registry-prometheus")
 
-    implementation("io.micronaut:micronaut-tracing")
-    runtimeOnly("io.jaegertracing:jaeger-thrift")
+//    implementation("io.micronaut:micronaut-tracing")
+//    runtimeOnly("io.jaegertracing:jaeger-thrift") {
+//        exclude group: 'com.com.squareup.okhttp3', module: 'okhttp'
+//    }
+//    implementation("com.squareup.okhttp3:okhttp:4.8.1")
 
     implementation("io.micronaut.reactor:micronaut-reactor")
 
@@ -66,6 +69,9 @@ dependencies {
     testImplementation("io.micronaut.test:micronaut-test-junit5")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation "org.assertj:assertj-core:3.16.1"
+
+    compileOnly("org.graalvm.nativeimage:svm")
+    annotationProcessor("io.micronaut:micronaut-graal")
 }
 
 mainClassName = "com.pchrzasz.Application"

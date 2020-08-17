@@ -1,6 +1,6 @@
 logger:
   levels:
-    ROOT: DEBUG
+    ROOT: INFO
     com.pchrzasz: DEBUG
 
 micronaut:
@@ -10,4 +10,9 @@ micronaut:
 eureka:
   client:
     registration:
+      enabled: false
+
+endpoints:
+  health:
+    discovery-client:
       enabled: false
