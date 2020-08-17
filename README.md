@@ -1,3 +1,19 @@
+# Microservice template
+
+Microservice based on framework Micronaut (Spring alternative) with improvements to create microservice template which 
+will be an entrypoint for starting development focusing on business logic instead of infrastructure. 
+This service:
+- exposes openapi (swagger doc) - `/v2/-api-dcs`
+- exposes metrics (support for prometheus) - `/management/metrics`
+- exposes healthcheck - `/management/health`
+- is using profiles (dev, prod, test) with proper configuration for each one e.g. disabled service discovery in `dev` and enabled in `prod`
+- is supporting Netflix Eureka (service discovery)
+- build executable .jar using one command: `./gradlew assemble`
+- allows creating docker image using one command: `./gradlew jibDockerBuild`
+- allows for tracing its endpoint (Jaeger end-to-end distributed tracing)
+- logging with highlight scheme (errors highlighted with red color)
+- exposes dummy endpoint `/hello`
+
 ## Feature openapi documentation
 
 - [Micronaut OpenAPI Support documentation](https://micronaut-projects.github.io/micronaut-openapi/latest/guide/index.html)
