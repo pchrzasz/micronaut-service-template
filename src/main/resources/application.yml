@@ -21,8 +21,3 @@ endpoints:
     details-visible: ANONYMOUS
     discovery-client:
       enabled: true
-tracing:
-  jaeger:
-    enabled: true
-    sampler:
-      probability: 0.1
