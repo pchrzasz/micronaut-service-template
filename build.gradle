@@ -64,7 +64,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation "org.assertj:assertj-core:3.17.0"
 
-    compileOnly("org.graalvm.nativeimage:svm:20.1.0")
+    compileOnly("org.graalvm.nativeimage:svm:20.2.0")
     annotationProcessor("io.micronaut:micronaut-graal")
 }
 
