@@ -62,7 +62,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("io.micronaut.test:micronaut-test-junit5")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
-    testImplementation "org.assertj:assertj-core:3.18.0"
+    testImplementation "org.assertj:assertj-core:3.18.1"
 
     compileOnly("org.graalvm.nativeimage:svm:20.2.0")
     annotationProcessor("io.micronaut:micronaut-graal")
