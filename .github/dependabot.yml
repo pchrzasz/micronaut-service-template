@@ -1,0 +1,25 @@
+version: 2
+updates:
+- package-ecosystem: gradle
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "04:00"
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: com.diffplug.eclipse.apt
+    versions:
+    - 3.26.0
+    - 3.27.0
+    - 3.28.0
+    - 3.28.1
+    - 3.28.2
+    - 3.29.0
+  - dependency-name: com.google.cloud.tools.jib
+    versions:
+    - 2.7.1
+    - 2.8.0
+  - dependency-name: org.graalvm.nativeimage:svm
+    versions:
+    - 21.0.0
+    - 21.0.0.2
